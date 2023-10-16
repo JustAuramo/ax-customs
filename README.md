@@ -5,36 +5,28 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://www.themoviedb.org/t/p/original/42hS6rz0XXbB2gQnyq6k3ps1EDZ.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/dp7pkKu.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h1 align='center'><center><img src="https://i.imgur.com/vAWFbhg.png" alt="what image shows" height="20" width="20"></center>   ESX-RADIALMENU   <center><img src="https://www.themoviedb.org/t/p/original/42hS6rz0XXbB2gQnyq6k3ps1EDZ.png" alt="what image shows" height="20" width="20"></center></a></h1>
+  <h1 align='center'><center><img src="https://i.imgur.com/vAWFbhg.png" alt="what image shows" height="20" width="20"></center>   QB-CUSTOMS   <center><img src="https://www.themoviedb.org/t/p/original/42hS6rz0XXbB2gQnyq6k3ps1EDZ.png" alt="what image shows" height="20" width="20"></center></a></h1>
 
-Fivem ESX radial menu, Nopixel style.
+qb-custom converted esx.
 
 
 
 ---
 
-### Requirements :
 
-- [translator](https://www.deepl.com/translator) (to translate things into English)
-- [esx](https://github.com/esx-framework/esx_core) (framework)
-- [wx-carlock](https://github.com/nwvh/wx_carlock) (car lock feature)
----
 
 #### Features
 
 Client side :
 
-- You can customise as you wish
-- Work-specific menu 
-- Car control
-- Emote selection
-- ID card menu
-- Emergency services, police, mechanic, nightclub, plus much more if you want to do
-- Map management
-- General functions
+- Tuning Your Car
+- Custom Location
+- Change Livery
+- Customize Price
+- Easy to use and read
 
 ---
 
@@ -43,7 +35,7 @@ Client side :
 - Add this text in your `server.cfg` :
 
 ```
-ensure radialmenu
+ensure qb-customs
 ```
 
 ---
