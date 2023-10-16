@@ -8,7 +8,7 @@
     <img src="https://i.imgur.com/nhZsEJA.png" alt="Logo" width="80" height="80">
   </a>
 
- <h1 align='center'><center><img src="https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/6f1917495f9c3478d2b2c2fae06e2f58_DTeSkwYGbO.png" alt="what image shows" height="20" width="20"></center>   QB-CUSTOMS   <center><img src="https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/6f1917495f9c3478d2b2c2fae06e2f58_DTeSkwYGbO.png" alt="what image shows" height="20" width="20"></center></a></h1>
+ <h1 align='center'><center><img src="https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/6f1917495f9c3478d2b2c2fae06e2f58_DTeSkwYGbO.png" alt="what image shows" height="20" width="20"></center>   AX-CUSTOMS   <center><img src="https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/6f1917495f9c3478d2b2c2fae06e2f58_DTeSkwYGbO.png" alt="what image shows" height="20" width="20"></center></a></h1>
 
 
 
@@ -54,11 +54,8 @@ ensure qb-customs
 config.lua
 ```
 ---
-![radialmenu](https://i.imgur.com/g6HarnQ.jpeg)
-![radialmenu](https://i.imgur.com/ZDg5j10.jpeg)
-![radialmenu](https://i.imgur.com/p5TWrQP.jpeg)
-![radialmenu](https://i.imgur.com/o6RtZsY.jpeg)
-![radialmenu](https://i.imgur.com/LgnYG05.jpeg)
+![radialmenu](https://i.imgur.com/5jNlT8z.jpeg)
+![radialmenu](https://i.imgur.com/q55Qsmj.jpeg)
 
 ---
 
