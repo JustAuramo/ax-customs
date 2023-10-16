@@ -26,7 +26,7 @@ Basic Vehicle tuning and customize menu!
 
 #### Features
 
-Client side :
+
 
 - Tuning Your Car
 - Custom Location
