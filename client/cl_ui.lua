@@ -444,9 +444,9 @@ function InitiateMenus(isMotorcycle, vehicleHealth)
 
     finishPopulatingMenu("WindowTintMenu")
 
-    --#[Old Livery Menu]#--
-    local livCount = GetVehicleLiveryCount(plyVeh)
-   if livCount > 0 then
+--#[Old Livery Menu]#--
+local livCount = GetVehicleLiveryCount(plyVeh)
+if livCount > 0 then
     local tempOldLivery = GetVehicleLivery(plyVeh)
     createMenu("OldLiveryMenu", "Old Livery Customisation", "Choose a Livery")
     for i=0, livCount-1 do
@@ -458,38 +458,40 @@ function InitiateMenus(isMotorcycle, vehicleHealth)
     finishPopulatingMenu("OldLiveryMenu")
 end
 
-     --#[Plate Colour Index Menu]#--
+    --#[Plate Colour Index Menu]#--
 
-     local tempPlateIndex = GetVehicleNumberPlateTextIndex(plyVeh)
-     createMenu("PlateIndexMenu", "Plate Colour", "Choose a Style")
-     local plateTypes = {
-         "Blue on White #1",
-         "Yellow on Black",
-         "Yellow on Blue",
-         "Blue on White #2",
-         "Blue on White #3",
-         "North Yankton",
-     }
-     for i=0, #plateTypes-1 do
-         if i ~= 4 or (i == 4 and GetVehicleClass(plyVeh) == 18) or Config.allowGovPlateIndex then
-             populateMenu("PlateIndexMenu", i, plateTypes[i+1], "$"..vehicleCustomisationPrices.plateindex.price)
-             if tempPlateIndex == i then
-                 updateItem2Text("PlateIndexMenu", i, "Installed")
-             end
-         end
-     end
-     finishPopulatingMenu("PlateIndexMenu")
+    local tempPlateIndex = GetVehicleNumberPlateTextIndex(plyVeh)
+    createMenu("PlateIndexMenu", "Plate Colour", "Choose a Style")
+    local plateTypes = {
+        "Blue on White #1",
+        "Yellow on Black",
+        "Yellow on Blue",
+        "Blue on White #2",
+        "Blue on White #3",
+        "North Yankton",
+    }
+    if GetVehicleClass(plyVeh) ~= 18 then
+        for i=0, #plateTypes-1 do
+            if i ~= 4 then
+                populateMenu("PlateIndexMenu", i, plateTypes[i+1], "$" .. math.floor(vehiclePrice * vehicleCustomisationPrices.plateindex.price / 100))
+                if tempPlateIndex == i then
+                    updateItem2Text("PlateIndexMenu", i, "Installed")
+                end
+            end
+        end
+    end
+    finishPopulatingMenu("PlateIndexMenu")
 
-   --#[Vehicle Extras Menu]#--
-   createMenu("VehicleExtrasMenu", "Vehicle Extras Customisation", "Toggle Extras")
-   for i=1, 12 do
-       if DoesExtraExist(plyVeh, i) then
-           populateMenu("VehicleExtrasMenu", i, "Extra "..tostring(i), "Toggle")
-       else
-           populateMenu("VehicleExtrasMenu", i, "No Option", "NONE")
-       end
-   end
-   finishPopulatingMenu("VehicleExtrasMenu")
+  --#[Vehicle Extras Menu]#--
+  createMenu("VehicleExtrasMenu", "Vehicle Extras Customisation", "Toggle Extras")
+  for i=1, 12 do
+      if DoesExtraExist(plyVeh, i) then
+          populateMenu("VehicleExtrasMenu", i, "Extra "..tostring(i), "Toggle")
+      else
+          populateMenu("VehicleExtrasMenu", i, "No Option", "NONE")
+      end
+  end
+  finishPopulatingMenu("VehicleExtrasMenu")
 
     --#[Neons Menu]#--
     createMenu("NeonsMenu", "Neon Customisation", "Choose a Category")
@@ -560,6 +562,7 @@ end
     end
 
     finishPopulatingMenu("XenonColoursMenu")
+    
 end
 
 function DestroyMenus()
@@ -788,6 +791,7 @@ function MenuManager(state)
                         updateMenuStatus("Not Enough Money")
                     end
                 elseif currentMenu == "OldLiveryMenu" then
+              
                     if GetVehicleClass(plyVeh) ~= 18 then
                         if AttemptPurchase("oldlivery") then
                             ApplyOldLivery(currentMenuItemID)

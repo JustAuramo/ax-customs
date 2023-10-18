@@ -64,8 +64,7 @@ end
 
 --#[Global Functions]#--
 function AttemptPurchase(type, upgradeLevel)
-    local plyPed = PlayerPedId()
-    local plyVeh = GetVehiclePedIsIn(plyPed, false)
+
 
     local vehiclePrice = 50000
 
@@ -745,7 +744,7 @@ function disableControls()
     DisableControlAction(1, 172, true) --Key: Up Arrow
     DisableControlAction(1, 173, true) --Key: Down Arrow
     DisableControlAction(1, 177, true) --Key: Backspace
-    DisableControlAction(1, 176, false) --Key: Enter
+    DisableControlAction(1, 176, true) --Key: Enter
     DisableControlAction(1, 71, true) --Key: W (veh_accelerate)
     DisableControlAction(1, 72, true) --Key: S (veh_brake)
     DisableControlAction(1, 34, true) --Key: A
@@ -795,27 +794,13 @@ CreateThread(function()
 
                     if nearDefault then
                         if not isPlyInBennys then
-                            Draw3DText(v.coords.x, v.coords.y, v.coords.z + 0.5, "[Paina ~p~E~w~ - Avataksesi Menu]", 255, 255, 255, 255, 4, 0.45, true, true, true, true, 0, 0, 0, 0, 55)
+                            Draw3DText(v.coords.x, v.coords.y, v.coords.z + 0.5, "[Tekan ~p~E~w~ - Modifikasi]", 255, 255, 255, 255, 4, 0.45, true, true, true, true, 0, 0, 0, 0, 55)
                             if IsControlJustReleased(1, 38) then
-                                lib.notify({
-                                    id = 'ilmotus',
-                                    title = 'TUUNAUS',
-                                    description = 'Menu Avattu',
-                                    position = 'top-right',
-                                    style = {
-                                        backgroundColor = '#141517',
-                                        color = '#C1C2C5',
-                                        ['.description'] = {
-                                          color = '#909296'
-                                        }
-                                    },
-                                    icon = 'fas fa-bell',
-                                    iconColor = '#C53030'
-                                })
 				                if GetPedInVehicleSeat(GetVehiclePedIsIn(PlayerPedId()), -1) == PlayerPedId() then
                                     if (v.useJob and isAuthorized(job.name, k)) or not v.useJob then
                                         TriggerEvent('event:control:bennys', k)
                                     else
+                                        QBCore.Functions.Notify("Kamu tidak berwenang", "error")
                                     end
                                 end
                             end
@@ -837,25 +822,21 @@ end)
 RegisterNetEvent("qb-customs:purchaseSuccessful", function()
     isPurchaseSuccessful = true
     attemptingPurchase = false
-    exports['okokNotify']:Alert('Title', 'Message', Time, 'type', playSound)
 end)
 
 RegisterNetEvent("qb-customs:purchaseFailed", function()
     isPurchaseSuccessful = false
     attemptingPurchase = false
-    QBCore.Functions.Notify("Kamu tidak memiliki cukup uang", "error")
 end)
 
 RegisterNetEvent("qb-customs:repairSuccessful", function()
     isPurchaseSuccessful = true
     attemptingPurchase = false
-    exports['okokNotify']:Alert('Title', 'Message', Time, 'type', playSound)
 end)
 
 RegisterNetEvent("qb-customs:repairFailed", function()
     isPurchaseSuccessful = false
     attemptingPurchase = false
-    QBCore.Functions.Notify("Kamu tidak memiliki toolkit", "error")
 end)
 
 --helper function
