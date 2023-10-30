@@ -20,7 +20,7 @@
 
 #### Description
 
-Basic Vehicle tuning and customize menu!
+Basic Vehicle tuning and customize menu! (edited version for qb-customs)
 
 ---
 
