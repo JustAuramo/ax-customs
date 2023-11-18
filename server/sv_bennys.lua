@@ -4,9 +4,9 @@ RegisterNetEvent('qb-customs:attemptPurchase', function(type, upgradeLevel, vehi
     local balance = Player.getMoney()
     
     if type == "repair" then
-        local toolkit  = Player.getInventoryItem('toolkit')
+        local toolkit  = Player.getInventoryItem('money')
         if toolkit.count > 0 then
-            Player.removeInventoryItem('toolkit', 1)
+            Player.removeInventoryItem('money', 1000)
             TriggerClientEvent('qb-customs:repairSuccessful', source)
         else
             TriggerClientEvent('qb-customs:repairFailed', source)
